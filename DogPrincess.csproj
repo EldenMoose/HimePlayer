@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+		<NeutralLanguage>en-US</NeutralLanguage>
+		
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net9.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UseWPF>true</UseWPF>
+		<PublishSingleFile>true</PublishSingleFile>
+		<SelfContained>true</SelfContained>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+		<RootNamespace>DogPrincess</RootNamespace>
+		
+		<IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
+		<EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+		
+		<Product>DogPrincess</Product>
+		<Authors>EldenMoose</Authors>
+		<Description>Unofficial Fan Port</Description>
+		
+		<Version>1.0.4</Version>
+		<FileVersion>1.0.4.1</FileVersion>
+		<AssemblyVersion>1.0.4.1</AssemblyVersion>
+		<InformationalVersion>2025.09.25-4</InformationalVersion>
+
+		<ApplicationIcon>Assets\AppIcon.ico</ApplicationIcon>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='Release'">
+		<PublishReadyToRun>true</PublishReadyToRun>
+		<Optimize>true</Optimize>
+		<DebugType>none</DebugType>
+		<DebugSymbols>false</DebugSymbols>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Remove="wwwroot\**\*.*" />
+		<EmbeddedResource Include="wwwroot\**\*.*">
+			<ExcludeFromSingleFile>false</ExcludeFromSingleFile>
+		</EmbeddedResource>
+	</ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3485.44" />
+    </ItemGroup>
+
+</Project>
